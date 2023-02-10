@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="purchase_order_action" model="ir.actions.act_window">
+            <field name="name">Purchase order</field>
+            <field name="res_model">po.wizard</field>
+            <field name="view_mode">form</field>
+        </record>
+        <record id="purchase_order_view" model="ir.ui.view">
+            <field name="name">po.wizard.form</field>
+            <field name="model">po.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                    <field name="quantity"/>
+                        <field name="currency_id" invisible="1"/>
+
+                    <field name="price"/>
+                        <field name="product_name_id" invisible="1"/>
+                        <field name="product_product_id"/>
+                    </group>
+
+                    <footer>
+                        <button name="action_to_confirm" class="oe_highlight" string="Confirm" type="object"/>
+                        <button string="Cancel" special="cancel"/>
+
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
